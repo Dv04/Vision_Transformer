@@ -10,7 +10,7 @@
 
 - Add the Issue you worked on in your Pull Request 
 
-- Don't work on the main branch, create your own branch by following the instructions [here](https://github.com/Dv04/Vision_Transformer/blob/main/CONTRIBUTING.md#-how-to-make-a-pull-request)
+- Don't work on the main branch, create your own branch by following the instructions [here](https://github.com/Dv04/Alumni_Management/blob/main/CONTRIBUTING.md#-how-to-make-a-pull-request)
 
 - Don't commit the lock files eg package.json
 
@@ -31,33 +31,33 @@
 
 ## 💥 How to Contribute
 
-- Take a look at the existing [Issues](https://github.com/Dv04/Vision_Transformer/issues) or [create a new issue](https://github.com/Dv04/Vision_Transformer/issues/new/choose)!
-- [Fork the Repo](https://github.com/Dv04/Vision_Transformer/fork). Then, create a branch for any issue that you are working on. Finally, commit your work.
-- Create a [Pull Request](https://github.com/Dv04/Vision_Transformer/compare) (PR), which will be promptly reviewed and given suggestions for improvements by the community.
+- Take a look at the existing [Issues](https://github.com/Dv04/Alumni_Management/issues) or [create a new issue](https://github.com/Dv04/Alumni_Management/issues/new/choose)!
+- [Fork the Repo](https://github.com/Dv04/Alumni_Management/fork). Then, create a branch for any issue that you are working on. Finally, commit your work.
+- Create a [Pull Request](https://github.com/Dv04/Alumni_Management/compare) (PR), which will be promptly reviewed and given suggestions for improvements by the community.
 - Add screenshots or screen captures to your Pull Request to help us understand the effects of the changes proposed in your PR.
 
 ---
 
 ## 🌟 HOW TO MAKE A PULL REQUEST:
 
-1. Start by making a Fork of the [Vision_Transformer](https://github.com/Dv04/Vision_Transformer) repository. Click on the <a href="https://github.com/Dv04/Vision_Transformer/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a>Fork symbol at the top right corner.
+1. Start by making a Fork of the [Alumni_Management](https://github.com/Dv04/Alumni_Management) repository. Click on the <a href="https://github.com/Dv04/Alumni_Management/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a>Fork symbol at the top right corner.
 
 2. Clone your new fork of the repository in the terminal/CLI on your computer with the following command:
 
 ```bash
-git clone https://github.com/<your-github-username>/Vision_Transformer
+git clone https://github.com/<your-github-username>/Alumni_Management
 ```
 
-3. Navigate to the newly created Vision_Transformer project directory:
+3. Navigate to the newly created Alumni_Management project directory:
 
 ```bash
-cd Vision_Transformer
+cd Alumni_Management
 ```
 
 4. Set upstream command:
 
 ```bash
-git remote add upstream https://github.com/Dv04/Vision_Transformer.git
+git remote add upstream https://github.com/Dv04/Alumni_Management.git
 ```
 
 5. Create a new branch:
@@ -101,12 +101,12 @@ git push origin YourBranchName
 
 10. Create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)!
 
-11. Congratulations! You've made your first contribution to [HMS](https://github.com/Dv04/Vision_Transformer/graphs/contributors)!
+11. Congratulations! You've made your first contribution to [HMS](https://github.com/Dv04/Alumni_Management/graphs/contributors)!
 
-🏆 After this, the maintainers will review the PR and will merge it if it helps move the Vision_Transformer project forward. Otherwise, it will be given constructive feedback and suggestions for the changes needed to add the PR to the codebase.
+🏆 After this, the maintainers will review the PR and will merge it if it helps move the Alumni_Management project forward. Otherwise, it will be given constructive feedback and suggestions for the changes needed to add the PR to the codebase.
 
 ---
 
 ## 💥 Issues
 
-In order to discuss changes, you are welcome to [open an issue](https://github.com/Dv04/Vision_Transformer/issues/new/choose) about what you would like to contribute. Enhancements are always encouraged and appreciated.
+In order to discuss changes, you are welcome to [open an issue](https://github.com/Dv04/Alumni_Management/issues/new/choose) about what you would like to contribute. Enhancements are always encouraged and appreciated.
