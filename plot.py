@@ -1,9 +1,13 @@
 import tensorflow as tf
 from tensorflow.keras import layers, Model
 import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
 from matplotlib import rcParams
+import shap
+import numpy as np
+import cv2
+import os
+import glob
+import re
 
 
 def build_vit_model():
@@ -43,40 +47,33 @@ def build_vit_model():
     return model
 
 
-# Load the model and weights
+def load_and_preprocess_images(file_path, image_size=(64, 64)):
+    images = []
+    for line in open(file_path, "r"):
+        file_path = line.strip()
+        img = cv2.imread(file_path, cv2.IMREAD_COLOR)
+        img = cv2.resize(img, image_size)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = img / 255.0
+        images.append(img)
+    return np.array(images)
+
+
 model = build_vit_model()
 model.load_weights("iteration_5_weights.h5")
+X_test = load_and_preprocess_images("test_files.txt")
 
-# Checking the layers to find one with weights
-print("Model Layers:")
-for i, layer in enumerate(model.layers):
-    print(i, layer.name)
+# Using GradientTape for a simple gradient-based explanation
+with tf.GradientTape() as tape:
+    tape.watch(X_test)
+    predictions = model(X_test)
 
-# Choose an appropriate layer that has weights
-layer_index = 32  # Adjust based on your actual layer's position
-layer = model.layers[layer_index]
+grads = tape.gradient(predictions, X_test)
 
-# Verify if the layer has weights
-if layer.weights:
-    weights = layer.get_weights()[0]
-
-    # Setting matplotlib parameters for the font
-    rcParams["font.family"] = "Times New Roman"
-    rcParams["font.size"] = 10
-    rcParams["figure.figsize"] = (8, 6)
-
-    # Assuming 'weights' is your numpy array from the model's layer
-    ax = sns.heatmap(weights, cmap="viridis", annot=False)
-    plt.title("Heatmap of Weights in Layer: dense_8")
-    plt.xlabel("Features")
-    plt.ylabel("Weights")
-
-    # Enhancing color bar
-    cbar = ax.collections[0].colorbar
-    cbar.set_label("Weight Magnitude")
-    cbar.set_ticks([-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3])
-    cbar.set_ticklabels(["-0.3", "-0.2", "-0.1", "0", "0.1", "0.2", "0.3"])
-
-    plt.show()
-else:
-    print(f"No weights in layer: {layer.name}")
+plt.figure(figsize=(12, 7))
+for i in range(5):  # Adjust this to display the number of images you'd like
+    plt.subplot(1, 5, i + 1)
+    plt.imshow(grads[i], cmap="viridis")
+    plt.axis("off")
+plt.suptitle("Gradient-based feature importance")
+plt.show()
